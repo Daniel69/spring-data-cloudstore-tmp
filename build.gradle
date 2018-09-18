@@ -1,0 +1,42 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.0.M3'
+    }
+    repositories {
+        mavenCentral()
+        maven { url "https://repo.spring.io/milestone" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: "java"
+apply plugin: 'io.spring.dependency-management'
+
+dependencyManagement {
+    imports {
+        mavenBom("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+repositories {
+    mavenCentral()
+    //maven { url "https://dl.bintray.com/sofka/clean-domain-commons" }
+    maven { url "https://repo.spring.io/milestone" }
+}
+
+dependencies {
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile group: 'com.google.cloud', name: 'google-cloud-datastore', version: '1.40.0'
+    compile 'org.springframework.data:spring-data-commons'
+    compile('org.springframework.boot:spring-boot-autoconfigure')
+    compile 'org.springframework:spring-tx'
+}
+
+
+
+description = "Spring Data Cloud DataStore"
+group = 'org.springframework.cloud.gcp.datastore'
+version '0.0.1-SNAPSHOT'
+sourceCompatibility = JavaVersion.VERSION_1_8

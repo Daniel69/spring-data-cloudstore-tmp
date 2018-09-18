@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.springframework.cloud.gcp.data.datastore.core.convert.EntityPropertyValueProviderTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-09-18T23:26:24" hostname="fedora-x1carbon" time="0.244">
+  <properties/>
+  <testcase name="getPropertyValue" classname="org.springframework.cloud.gcp.data.datastore.core.convert.EntityPropertyValueProviderTests" time="0.224"/>
+  <testcase name="testException" classname="org.springframework.cloud.gcp.data.datastore.core.convert.EntityPropertyValueProviderTests" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

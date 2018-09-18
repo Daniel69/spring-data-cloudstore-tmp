@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.springframework.cloud.gcp.data.datastore.repository.query.PartTreeDatastoreQueryTests" tests="9" skipped="0" failures="0" errors="0" timestamp="2018-09-18T23:26:26" hostname="fedora-x1carbon" time="0.081">
+  <properties/>
+  <testcase name="unSupportedOrTest" classname="org.springframework.cloud.gcp.data.datastore.repository.query.PartTreeDatastoreQueryTests" time="0.028"/>
+  <testcase name="unSupportedPredicateTest" classname="org.springframework.cloud.gcp.data.datastore.repository.query.PartTreeDatastoreQueryTests" time="0.003"/>
+  <testcase name="compoundNameConventionTest" classname="org.springframework.cloud.gcp.data.datastore.repository.query.PartTreeDatastoreQueryTests" time="0.017"/>
+  <testcase name="unsupportedParamTypeTest" classname="org.springframework.cloud.gcp.data.datastore.repository.query.PartTreeDatastoreQueryTests" time="0.004"/>
+  <testcase name="existShouldBeFalseWhenResultSetIsEmpty" classname="org.springframework.cloud.gcp.data.datastore.repository.query.PartTreeDatastoreQueryTests" time="0.018"/>
+  <testcase name="existShouldBeTrueWhenResultSetIsNotEmpty" classname="org.springframework.cloud.gcp.data.datastore.repository.query.PartTreeDatastoreQueryTests" time="0.003"/>
+  <testcase name="countTest" classname="org.springframework.cloud.gcp.data.datastore.repository.query.PartTreeDatastoreQueryTests" time="0.003"/>
+  <testcase name="unspecifiedParametersTest" classname="org.springframework.cloud.gcp.data.datastore.repository.query.PartTreeDatastoreQueryTests" time="0.003"/>
+  <testcase name="deleteTest" classname="org.springframework.cloud.gcp.data.datastore.repository.query.PartTreeDatastoreQueryTests" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
