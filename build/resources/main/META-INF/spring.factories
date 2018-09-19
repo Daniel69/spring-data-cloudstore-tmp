@@ -1,3 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-org.springframework.cloud.gcp.autoconfigure.datastore.GcpDatastoreAutoConfiguration,\
-org.springframework.cloud.gcp.autoconfigure.datastore.DatastoreRepositoriesAutoConfiguration

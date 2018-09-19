@@ -4,6 +4,7 @@ buildscript {
     }
     repositories {
         mavenCentral()
+	jcenter()
         maven { url "https://repo.spring.io/milestone" }
     }
     dependencies {
@@ -11,7 +12,13 @@ buildscript {
     }
 }
 
+plugins {
+    id "com.jfrog.bintray" version "1.8.4"
+}
 apply plugin: "java"
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+
 apply plugin: 'io.spring.dependency-management'
 
 dependencyManagement {
@@ -22,7 +29,7 @@ dependencyManagement {
 
 repositories {
     mavenCentral()
-    //maven { url "https://dl.bintray.com/sofka/clean-domain-commons" }
+    jcenter()
     maven { url "https://repo.spring.io/milestone" }
 }
 
@@ -37,6 +44,37 @@ dependencies {
 
 
 description = "Spring Data Cloud DataStore"
-group = 'org.springframework.cloud.gcp.datastore'
+group = 'org.springframework.cloud'
 version '0.0.1-SNAPSHOT'
 sourceCompatibility = JavaVersion.VERSION_1_8
+
+publishing {
+        publications {
+                MyPublication(MavenPublication) {
+                        from components.java
+                        groupId 'org.springframework.cloud'
+                        artifactId 'spring-cloud-gcp-data-datastore'
+                        version '0.0.1'
+                }
+        }
+}
+
+bintray {
+        user = project.hasProperty('bintrayUser') ? project.property('bintrayUser') : System.getenv('BINTRAY_USER')
+        key = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
+        publications = ['MyPublication']
+        pkg {
+                repo = 'clean-domain-commons'
+                name = 'spring-cloud-gcp-data-datastore'
+                userOrg = 'sofka'
+                licenses = ['Apache-2.0']
+                vcsUrl = 'https://github.com/Daniel69/spring-data-cloudstore-tmp.git'
+                labels = ['gcp', 'data', 'spring']
+                publicDownloadNumbers = true
+                version {
+                        name = '0.0.1'
+                        desc = 'Spring Data Cloud DataStore (Tmp version)'
+                        vcsTag = '0.0.1'
+                }
+        }
+}
